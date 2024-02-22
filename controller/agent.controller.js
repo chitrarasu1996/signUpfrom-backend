@@ -25,8 +25,8 @@ if(hashedPass){
         password:hashedPass,
         address,
         city,
-        lat,
-        lon
+        lat:lat||"",
+        lon:lon||""
     }).save()
 
     if(!stroedData){
