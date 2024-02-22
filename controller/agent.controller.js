@@ -2,8 +2,8 @@ const bcrpt=require("bcrypt")
 const deliveryAgentCollection=require("../models/userModel")
 exports.registerAgent=async(req,res)=>{
     try {
-        const{name,email,mobileNumber,password,pincode,address,city}=req.body
-  
+        const{name,email,mobileNumber,password,pincode,address,city,lon,lat}=req.body
+
         const oldUser=await deliveryAgentCollection.findOne({email})
         if(oldUser){
             return res.status(200).send({result:false,message:"email already exists"})
@@ -24,7 +24,9 @@ if(hashedPass){
         mobileNumber,
         password:hashedPass,
         address,
-        city
+        city,
+        lat,
+        lon
     }).save()
 
     if(!stroedData){
@@ -36,6 +38,7 @@ res.status(201).send({result:true,message:"Agent registered successfully"})
 
 
 }
+
 } catch (error) {
         console.log(error)
 res.status(500).send("internal server error")
