@@ -15,7 +15,7 @@ if(oldMobileNum){
 
         const hashedPass=await bcrpt.hash(password,12);
 
-
+console.log(lon,lon,"lom")
 if(hashedPass){
     const stroedData=await new deliveryAgentCollection({
         name,
@@ -25,8 +25,8 @@ if(hashedPass){
         password:hashedPass,
         address,
         city,
-        lat:lat||"",
-        lon:lon||""
+        lat:lat,
+        lon:lon,
     }).save()
 
     if(!stroedData){

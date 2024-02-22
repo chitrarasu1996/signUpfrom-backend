@@ -27,11 +27,11 @@ const deliveryAgentSchema = mongoose.Schema({
     },
     lon: {
         type: String,
-        required: true
+        default:""
     },
     lat: {
         type: String,
-        required: true
+        default:""
     },
     city: {
         type: String,
