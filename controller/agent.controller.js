@@ -34,7 +34,7 @@ if(hashedPass){
    return 
     }
 
-res.status(201).send({result:true,message:"Agent registered successfully"})
+res.status(201).send({result:true,message:"Registered successfully"})
 
 
 }
